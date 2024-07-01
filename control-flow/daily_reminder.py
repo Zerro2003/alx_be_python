@@ -7,25 +7,22 @@ def daily_reminder():
     # Process the task based on priority and time sensitivity
     match priority:
         case "high":
-            reminder = f"'{task}' is a high priority task"
+            print(f"\n'{task}' is a high priority task", end="")
         case "medium":
-            reminder = f"'{task}' is a medium priority task"
+            print(f"\n'{task}' is a medium priority task", end="")
         case "low":
-            reminder = f"'{task}' is a low priority task"
+            print(f"\n'{task}' is a low priority task", end="")
         case _:
-            reminder = f"'{task}' is a task"
+            print(f"\n'{task}' is a task", end="")
 
-    # Modify reminder based on time sensitivity
+    # Modify output based on time sensitivity
     if time_bound == "yes":
-        reminder += " that requires immediate attention today!"
+        print(" that requires immediate attention today!")
     else:
         if priority == "low":
-            reminder = f"{reminder}. Consider completing it when you have free time."
+            print(". Consider completing it when you have free time.")
         else:
-            reminder += "."
-
-    # Print the customized reminder
-    print(f"\nReminder: {reminder}")
+            print(".")
 
 # Run the daily reminder function
 daily_reminder()
