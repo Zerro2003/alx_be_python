@@ -20,12 +20,12 @@ def daily_reminder():
         reminder += " that requires immediate attention today!"
     else:
         if priority == "low":
-            reminder = f"Note: {reminder}. Consider completing it when you have free time."
+            reminder = f"{reminder}. Consider completing it when you have free time."
         else:
             reminder += "."
 
     # Print the customized reminder
-    print("\n" + reminder)
+    print(f"\nReminder: {reminder}")
 
 # Run the daily reminder function
 daily_reminder()
