@@ -17,10 +17,10 @@ def daily_reminder():
 
     # Modify output based on time sensitivity
     if time_bound == "yes":
-        print(" Reminder: 'Finish project report' is a high priority task that requires immediate attention today!")
+        print(" Reminder:", task," is a high priority task that requires immediate attention today!")
     else:
         if priority == "low":
-            print("Note: 'Read a book' is a low priority task. Consider completing it when you have free time.")
+            print("Note: ",task," is a low priority task. Consider completing it when you have free time.")
         else:
             print(".")
 
