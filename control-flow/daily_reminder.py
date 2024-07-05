@@ -1,28 +1,21 @@
-def daily_reminder():
-    # Get task details from the user
-    task = input("Enter your task: ")
-    priority = input("Priority (high/medium/low): ").lower()
-    time_bound = input("Is it time-bound? (yes/no): ").lower()
+# Prompt for a Single Task
+task = input('Enter your task: ')
+priority = input('Priority (high/medium/low)?: ')
+time_bound = input('Is it time-bound (yes/no)?: ')
 
-    # Process the task based on priority and time sensitivity
-    match priority:
-        case "high":
-            print(f"\n'{task}' is a high priority task", end="")
-        case "medium":
-            print(f"\n'{task}' is a medium priority task", end="")
-        case "low":
-            print(f"\n'{task}' is a low priority task", end="")
-        case _:
-            print(f"\n'{task}' is a task", end="")
+# Process the Task Based on Priority
+match priority.lower():  # Convert input to lowercase to handle case-insensitivity
+    case 'high':
+        print('Your task is high priority.')
+    case 'medium':
+        print('Your task is medium priority.')
+    case 'low':
+        print('Your task is low priority.')
+    case _:
+        print('Unknown priority.')
 
-    # Modify output based on time sensitivity
-    if time_bound == "yes":
-        print(" Reminder:", task," is a high priority task that requires immediate attention today!")
-    else:
-        if priority == "low":
-            print("Note: ",task," is a low priority task. Consider completing it when you have free time.")
-        else:
-            print(".")
-
-# Run the daily reminder function
-daily_reminder()
+# Modify the output if the task is time-bound
+if time_bound.lower() == 'yes':
+    print(f'Reminder: {task} is a high priority task that requires immediate attention today!')
+else:
+    print(f'Note: {task} is a task to consider completing when you have free time.')
