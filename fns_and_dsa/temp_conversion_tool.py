@@ -42,7 +42,7 @@ def main():
                 converted_temp = convert_to_celsius(temperature)
                 converted_unit = "C"
             else:
-                raise ValueError("Invalid unit. Please enter 'C' or 'F'.")
+                raise ValueError(" Invalid temperature. Please enter a numeric value.")
 
             print(f"{temperature:.2f}°{unit} is equal to {converted_temp:.2f}°{converted_unit}.")
             break
