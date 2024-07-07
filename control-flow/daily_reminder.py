@@ -18,7 +18,7 @@ def main():
 
     # Modify reminder based on time sensitivity
     if time_bound == "yes":
-        reminder_prefix += f"**{task}** that requires immediate attention today!"
+        print(f" reminder: **{task}** that requires immediate attention today!")
     else:
         reminder_prefix += f"{task}."
 
