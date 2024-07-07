@@ -3,7 +3,7 @@ shopping_list = []
 
 # Function to display the menu and handle user input
 def display_menu():
-    print("\nShopping List Menu:")
+    print("\nShopping List Manager")  # Print the title here
     print("1. Add item")
     print("2. Remove item")
     print("3. View list")
