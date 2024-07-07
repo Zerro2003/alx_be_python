@@ -1,29 +1,25 @@
-def main():
-    """Prompts user for task details, determines priority and time sensitivity, and displays a reminder."""
+def daily_reminder():
+    # Get task details from the user
+    task = input("Enter your task: ")
+    priority = input("Priority (high/medium/low): ").lower()
+    time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-    task = input("Enter a task description: ")
-    priority = input("Enter the task's priority (high, medium, low): ").lower()
-    time_bound = input("Is this a time-bound task (yes or no)?: ").lower()
-
-    # Match case for priority levels
+    # Process the task based on priority and time sensitivity
     match priority:
         case "high":
-            reminder_prefix = "**HIGH PRIORITY:** Don't forget to "
+            print(f"\n'{task}' is a high priority task", end="")
         case "medium":
-            reminder_prefix = "**MEDIUM PRIORITY:** You should "
+            print(f"\n'{task}' is a medium priority task", end="")
         case "low":
-            reminder_prefix = "**LOW PRIORITY:** It would be good to "
+            print(f"\n'{task}' is a low priority task", end="")
         case _:
-            reminder_prefix = "**Task:** "  # Default case for invalid priority
+            print(f"\n'{task}' is a task", end="")
 
-    # Modify reminder based on time sensitivity
+    # Modify output based on time sensitivity
     if time_bound == "yes":
-        print(f" reminder: **{task}** that requires immediate attention today!")
+        print("Reminder: ", task," is a high priority task that requires immediate attention today!")
     else:
-        reminder_prefix += f"{task}."
+            print("Note: ",task," is a low priority task. Consider completing it when you have free time.")
 
-    print(reminder_prefix)
-
-
-if __name__ == "__main__":
-    main()
+# Run the daily reminder function
+daily_reminder()
